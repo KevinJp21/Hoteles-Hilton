@@ -18,18 +18,11 @@ body {
   font-family: 'Proxima Vara';
   }
 
-  .main{
-    width: 100vw;
-  }
+.contenedor{
+    min-height: 2000px;
+    display: flex;
+    flex-direction: column;
 
-.c-item{
-  height: 700px;
-}
-
-.c-img{
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
 }
 
 .container-topbar{
@@ -38,6 +31,7 @@ body {
   position: absolute;
   top: 0;
 }
+
 
 .topbar{
   justify-content: space-between;
@@ -49,11 +43,6 @@ body {
   
   
 }
-
-.container-bar-elements{
-
-}
-
 .topbar {
   transition: all .2s ease-in-out;
   background: linear-gradient(to bottom, #1b1b1b, #e6cfcf00);
@@ -67,7 +56,7 @@ body {
   color: var(--Gris);
   text-align: center;
   font-weight: 400;
-
+  user-select: none;
 }
 
 .container-1-3{
@@ -108,7 +97,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-
 }
 
 .link-login,.favorites,.bag,.search{
@@ -150,6 +138,123 @@ body {
   font-weight: 400;
 }
 
+/*Slider*/
+
+
+.row{
+  width: 100vw;
+}
+
+.c-item{
+height: 700px;
+}
+
+.c-img{
+height: 100%;
+object-fit: cover;
+filter: brightness(0.6);
+}
+
+.btn-c a{
+text-decoration: none;
+color: #fff;
+}
+
+/*Content*/
+
+.content{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading{
+  width:80% ;
+  text-align: center;
+  color: var(--Opacity-gray);
+  font-weight: bold;
+  border-bottom: 2px solid var(--Opacity-gray);
+}
+
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn_search{
+  width: 140px;
+  height: 40px;
+}
+
+.form-container input{
+  height: 40px;
+  width: 40vw;
+  text-align: center;
+  
+}
+
+.container-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.container-1 form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-1 form input{
+  width: 80vw;
+  text-align: center;
+  border-style: hidden;
+  border-bottom: 2px solid var(--Opacity-gray);
+}
+
+.container-1 form input:focus{
+  outline: none;
+}
+
+
+.container-1 .check{
+  width: 20px !important;
+}
+
+.btn_2{
+  width: 50%;
+}
+
+.container-2{
+  padding: 20px;
+}
+
+.container-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2 img{
+  object-fit: cover;
+  width: 70%;
+  height: 800px;
+  border-radius: 20px
+}
+
+
+
+
+
+
+
+
 /*Animacion TOPBAR*/
 
 .topbar {
@@ -164,3 +269,30 @@ body {
 .container-3-3 .container-location{
   display: none;
 } 
+
+
+/*<?php
+
+        // Obtenemos el precio ingresado por el usuario
+        $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
+
+        // Creamos el objeto hotel
+        $hotel = HotelFactory::crearHotel($precio);
+
+        // Imprimimos el formulario del hotel
+        $hotel->imprimirFormulario();
+
+        ?>
+        
+          <div class="conainer-content"> 
+        <section class="content">
+            <div class="heading display-4">Reservación</div>
+       </section>
+
+        <form class="form-container ms-5 mt-5" action="index.php" method="post">
+            <input class="fs-3" type="number" name="precio" placeholder="Ingrese el costo por noche">
+            <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
+        </form>
+    </div>
+
+        */
