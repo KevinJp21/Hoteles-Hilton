@@ -198,7 +198,7 @@ class HotelFactory {
         </form>
     </div>
         <?php
-
+        
         // Obtenemos el precio ingresado por el usuario
             $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
 
