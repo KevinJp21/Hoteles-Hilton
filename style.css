@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Proxima Vara';
+  src: url('../Hoteles_Hilton/font/proximaVara.woff2') format('woff2');
+}
+:root{
+  --Opacity-gray: #807d7a;
+  --Opacity-gray-letters:#cbc6c1;
+  --Gris:#e5dfd9;
+  --Verde:#A1C751;
+}
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 64%;
+}
+
+body {
+  font-family: 'Proxima Vara';
+  }
+
+  .main{
+    width: 100vw;
+  }
+
+.c-item{
+  height: 700px;
+}
+
+.c-img{
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.container-topbar{
+  width: 100%;
+  z-index: 30;
+  position: absolute;
+  top: 0;
+}
+
+.topbar{
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1b1b;
+  height: 60px;
+  justify-content: center;
+  width: 100%;
+  
+  
+}
+
+.container-bar-elements{
+
+}
+
+.topbar {
+  transition: all .2s ease-in-out;
+  background: linear-gradient(to bottom, #1b1b1b, #e6cfcf00);
+  z-index: 30;
+}
+
+
+/*Container logo*/
+
+.container-2-3 h1{
+  color: var(--Gris);
+  text-align: center;
+  font-weight: 400;
+
+}
+
+.container-1-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.location,.language,.client-services{
+  color: var(--Opacity-gray-letters);
+  text-decoration: none;
+}
+
+.location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.location-svg{
+  width: 11px;
+  height: 11xp;
+  color:var(--Opacity-gray) ;
+}
+
+.container-location:hover svg ,.container-location:hover a,.client-services:hover, .language:hover{
+  color: var(--Gris)
+}
+
+.language{
+  cursor: pointer;
+}
+
+.container-3-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.link-login,.favorites,.bag,.search{
+  color: var(--Opacity-gray-letters);
+  text-decoration: none;
+}
+
+.container-favorites{
+  width: 13px;
+
+}
+
+.favorite-svg,.bag svg,.search svg{
+  color: var(--Opacity-gray);
+}
+
+.favorite-svg{
+  width: 14px;
+  height: 13px;
+}
+
+.link-login:hover,.favorites-svg:hover,.container-bag:hover a,.container-bag:hover svg, .search-svg:hover{
+  color: var(--Gris);
+  }
+
+.search-svg{
+  width: 33px;
+  height: 33px;
+}
+
+.cc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cc p{
+  font-weight: 400;
+}
+
+/*Animacion TOPBAR*/
+
+.topbar {
+ transition: all .2s ease-in-out;
+ background: linear-gradient(to bottom, #1b1b1b, #e6cfcf00);
+ z-index: 30;
+}
+.topbar:hover{
+  transition: all .2s ease-in-out;
+  background-color: #1b1b1b;
+}
+.container-3-3 .container-location{
+  display: none;
+} 
