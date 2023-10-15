@@ -213,7 +213,6 @@ class Hostal extends Hotel {
         echo '</div>';
     }
 }
-cabesa 
 class Posada extends Hotel {
 
     public function imprimirFormulario() {
