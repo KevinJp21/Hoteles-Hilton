@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Proxima Vara';
-  src: url('/font/proximaVara.woff2') format('woff2');
+  src: url('../Hoteles_Hilton/font/proximaVara.woff2') format('woff2');
 }
 :root{
   --Opacity-gray: #807d7a;
