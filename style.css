@@ -293,32 +293,3 @@ footer{
 .footer svg{
   fill: #ffff;
 }
-
-/*
-
-        <div class="conainer-content">
-            <section class="content">
-                <div id="heading" class="heading display-4">Cotizar</div>
-            </section>
-
-            <form class="form-container ms-5 mt-5" action="index.php" method="post">
-                <input required="true" class="fs-3" type="number" name="precio"
-                    placeholder="Ingrese el costo por noche">
-                <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
-            </form>
-
-            <?php
-        
-        // Obtenemos el precio ingresado por el usuario
-            $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
-            if($precio != 0){
-                // Creamos el objeto hotel
-            $hotel = HotelFactory::crearHotel($precio);
-
-            // Imprimimos el formulario del hotel
-                $hotel->imprimirFormulario();
-            }
-        ?>
-        </div>
-
-*/
