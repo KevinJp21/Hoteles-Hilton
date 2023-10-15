@@ -19,7 +19,7 @@ body {
   }
 
 .contenedor{
-    min-height: 2000px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -170,7 +170,7 @@ color: #fff;
 }
 
 .heading{
-  width:80% ;
+  width:80%;
   text-align: center;
   color: var(--Opacity-gray);
   font-weight: bold;
@@ -193,7 +193,8 @@ color: #fff;
   height: 40px;
   width: 40vw;
   text-align: center;
-  
+  border-radius: 10px;
+  border-color: #000000;
 }
 
 .container-1{
@@ -243,18 +244,10 @@ color: #fff;
 
 .container-2 img{
   object-fit: cover;
-  width: 70%;
-  height: 800px;
+  width: 90%;
+  height: 50%;
   border-radius: 20px
 }
-
-
-
-
-
-
-
-
 /*Animacion TOPBAR*/
 
 .topbar {
@@ -270,29 +263,62 @@ color: #fff;
   display: none;
 } 
 
+/*footer*/
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color:black;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  max-height: 50px;
+  width: 100%;
+}
 
-/*<?php
+.footer p{
+  color: aliceblue;
+}
 
-        // Obtenemos el precio ingresado por el usuario
-        $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
+.footer{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 
-        // Creamos el objeto hotel
-        $hotel = HotelFactory::crearHotel($precio);
+.footer i{
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
 
-        // Imprimimos el formulario del hotel
-        $hotel->imprimirFormulario();
+.footer svg{
+  fill: #ffff;
+}
 
-        ?>
+/*
+
+        <div class="conainer-content">
+            <section class="content">
+                <div id="heading" class="heading display-4">Cotizar</div>
+            </section>
+
+            <form class="form-container ms-5 mt-5" action="index.php" method="post">
+                <input required="true" class="fs-3" type="number" name="precio"
+                    placeholder="Ingrese el costo por noche">
+                <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
+            </form>
+
+            <?php
         
-          <div class="conainer-content"> 
-        <section class="content">
-            <div class="heading display-4">Reservación</div>
-       </section>
+        // Obtenemos el precio ingresado por el usuario
+            $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
+            if($precio != 0){
+                // Creamos el objeto hotel
+            $hotel = HotelFactory::crearHotel($precio);
 
-        <form class="form-container ms-5 mt-5" action="index.php" method="post">
-            <input class="fs-3" type="number" name="precio" placeholder="Ingrese el costo por noche">
-            <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
-        </form>
-    </div>
+            // Imprimimos el formulario del hotel
+                $hotel->imprimirFormulario();
+            }
+        ?>
+        </div>
 
-        */
+*/
