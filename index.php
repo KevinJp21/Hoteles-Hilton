@@ -182,18 +182,18 @@
 </html>
 
 <?php
-/* Clase abstracta que representa un hotel, se declara como clase absracta para obligar a las subclases a crear sus propias versiones, 
+/* Clase abstracta que representa un hotel, se declara como clase abstracta para obligar a las subclases a crear sus propias versiones, 
 osea esta clase no se puede instanciar directamente, pero se utiliza como plantilla para definir otras clases que heredan sus propiedades y metodos.*/
 
 abstract class Hotel {//Clase creadora abstracta
 
-    protected $precio;//esta variable se daclara como protegida y solo puede ser accedida desde la clase hotel y sus clases derivadas
+    protected $precio;//esta variable se declara como protegida y solo puede ser accedida desde la clase hotel y sus clases derivadas
 
-    public function construct($precio) {// Este metodo se utiliza para establecer el valor de $precio cuando se crea o se instancia un objeto de la clase Hotel.
+    public function construct($precio) {// Este método se utiliza para establecer el valor de $precio cuando se crea o se instancia un objeto de la clase Hotel.
         $this->precio = $precio;
     }
 
-    abstract public function imprimirFormulario();//Metodo abstracto publico que puede ser accedido desde cualquier parte pero solo por las clases que se derivan de hotel
+    abstract public function imprimirFormulario();//Método abstracto publico que puede ser accedido desde cualquier parte pero solo por las clases que se derivan de hotel
 }
 
 //Clases creadores concretos
@@ -204,7 +204,7 @@ class Hostal extends Hotel {
         echo '<h2 class="mt-5">HOSTAL</h2>';
         echo '<form action="index.php" method="post">';
         echo '<input class="fs-3" type="number" name="numero_personas" placeholder="Número de personas">';
-        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadia">';
+        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadía">';
         echo '<button class="btn_2 btn_search btn btn-primary fs-2 mt-2" type="submit" value="Enviar">Enviar</button>';
         echo '</form>';
         echo '</div>';
@@ -213,7 +213,7 @@ class Hostal extends Hotel {
         echo '</div>';
     }
 }
-
+cabesa 
 class Posada extends Hotel {
 
     public function imprimirFormulario() {
@@ -221,7 +221,7 @@ class Posada extends Hotel {
         echo '<h2 class="mt-5">POSADA</h2>';
         echo '<form action="index.php" method="post">';
         echo '<input class="fs-3" type="number" name="numero_personas" placeholder="Número de personas">';
-        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadia">';
+        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadía">';
         echo '<span class="fs-3 mt-4"><input class="check" type="checkbox" name="desayuno" value="1"> Incluir desayuno</span>';
         echo '<button class="btn_2 btn_search btn btn-primary fs-2 mt-2" type="submit" value="Enviar">Enviar</button>';
         echo '</form>';
@@ -239,7 +239,7 @@ class Resort extends Hotel {
         echo '<h2 class="mt-5">RESORT</h2>';
         echo '<form action="index.php" method="post">';
         echo '<input class="fs-3" type="number" name="numero_personas" placeholder="Número de personas">';
-        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadia">';
+        echo '<input class="fs-3 mt-3" type="number" name="numero_dias" placeholder="Días de estadía">';
         echo '<span class="fs-3 mt-4"><input class="check" type="checkbox" name="todo_incluido" value="1"> Plan todo incluido</span>';
         echo '<button class="btn_2 btn_search btn btn-primary fs-2 mt-2" type="submit" value="Enviar">Enviar</button>';
         echo '</form>';
@@ -250,7 +250,6 @@ class Resort extends Hotel {
     }
 }
 
-// Clase que implementa el patrón Factory Method
 class HotelFactory {
 
     public static function crearHotel($precio) {
