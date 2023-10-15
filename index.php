@@ -258,7 +258,7 @@ class HotelFactory {
             return new Hostal($precio);
         } else if ($precio >= 70000 && $precio <= 149999) {
             return new Posada($precio);
-        } else{
+        } else if ($precio >= 150000){
             return new Resort($precio);
         }
     }
