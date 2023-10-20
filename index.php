@@ -158,11 +158,11 @@
 
             <?php
             $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
-            if ($precio > 40000) {
+            if ($precio >= 40000) {
                 $hotel = HotelFactory::crearHotel($precio);
                 $hotel->imprimirFormulario();
             }else{
-                echo '<span class="fs-1" style="display:flex; justify-content:center; color:red">Ingrese un costo mayor a o igual a 40.000</span>';
+                echo '<span class="fs-3" style="display:flex; justify-content:center; color:blue">El costo mínimo para cotizar es de 40.000 COP</span>';
             }
             ?>
         </div>
@@ -201,8 +201,8 @@ abstract class Hotel //Esta clase define la interfaz de los objetos que se crear
     abstract public function imprimirFormulario();
 }
 
-class Hostal extends Hotel // Hostal, Posada y resort son la clase de creadores concretos y a la vez son los productos concretos
-                           // Son las implementacion concretas de la interfaz 
+class Hostal extends Hotel // Hostal, Posada y Resorts son la clase de creadores concretos y a la vez son los productos concretos
+                           // Son las implementación concretas de la interfaz 
 {
     public function imprimirFormulario()
     {
