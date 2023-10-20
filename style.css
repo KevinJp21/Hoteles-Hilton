@@ -16,6 +16,8 @@
 
 body {
   font-family: 'Proxima Vara';
+  overflow-x: hidden;
+  overflow-y: auto;
   }
 
 .contenedor{

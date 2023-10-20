@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Hoteles Hilton</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../Hoteles_Hilton/style.css">
-    
-    
-</head>
-<body>
 
-<div class="contenedor">
+
+</head>
+
+<body>
+    <div class="contenedor">
         <div class="container-topbar">
             <div class="topbar">
 
@@ -18,8 +20,8 @@
 
                     <div class="col-3 container-1-3">
                         <div class="container-location">
-                            <a href="#" class="location"><svg class="location-svg" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 14 20">
+                            <a href="#" class="location"><svg class="location-svg"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 20">
                                     <symbol viewBox="0 0 14 20" id="45093">
                                         <title>location</title>
                                         <g fill="currentColor">
@@ -49,8 +51,8 @@
                             <a href="#" class="link-login"> <span class="fs-4">Iniciar Sesión</span></a>
                         </div>
                         <div class="container-favorites">
-                            <a href="#" class="favorites"><svg class="favorites-svg" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 15 13.5">
+                            <a href="#" class="favorites"><svg class="favorites-svg"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13.5">
                                     <symbol viewBox="0 0 15 13.5" id="14801">
                                         <title>saved-items</title>
                                         <g fill="currentColor">
@@ -143,63 +145,67 @@
             </div>
         </div>
 
-            <div class="container-content">
-                <section class="content">
-                    <div class="heading display-4">Cotizar</div>
-                </section>
+        <div class="container-content">
+            <section class="content">
+                <div id="heading" class="heading display-4">Cotizar</div>
+            </section>
 
-                <form class="form-container ms-5 mt-5" action="index.php" method="post">
-                    <input required="true" class="fs-3" type="number" name="precio" placeholder="Ingrese el costo por noche">
-                    <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
-                </form>
+            <form class="form-container ms-5 mt-5" action="index.php" method="post">
+                <input required="true" class="fs-3" type="number" name="precio"
+                    placeholder="Ingrese el costo por noche">
+                <button class="btn_search btn btn-primary fs-2" type="submit" value="Buscar">Buscar</button>
+            </form>
 
-                <?php
-                    $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
-                    if($precio != 0){
-                        $hotel = HotelFactory::crearHotel($precio);
-                        $hotel->imprimirFormulario();
-                    }
-                ?>
+            <?php
+            $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
+            if ($precio > 40000) {
+                $hotel = HotelFactory::crearHotel($precio);
+                $hotel->imprimirFormulario();
+            }else{
+                echo '<span class="fs-1" style="display:flex; justify-content:center; color:red">Ingrese un costo mayor a o igual a 40.000</span>';
+            }
+            ?>
         </div>
-    <footer id="footer" class="mt-5">
-        <div class="footer">
-            <p class="fs-5 m-0">&copy; Copyright 2023 - Todos los derechos reservados | KevinJp </p>
-            <a href="https://github.com/KevinJp21"><svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24" width="35px" height="35px">
-                    <path
-                        d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6 c0,0,1.4,0,2.8,1.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4 c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3 C22,6.1,16.9,1.4,10.9,2.1z" />
-                </svg></a>
-        </div>
-    </footer>        
-</div>
+        <footer id="footer" class="mt-5">
+            <div class="footer">
+                <p class="fs-5 m-0">&copy; Copyright 2023 - Todos los derechos reservados | KevinJp </p>
+                <a href="https://github.com/KevinJp21"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        width="35px" height="35px">
+                        <path
+                            d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6 c0,0,1.4,0,2.8,1.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4 c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3 C22,6.1,16.9,1.4,10.9,2.1z" />
+                    </svg></a>
+            </div>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
 
 <?php
-/* Clase abstracta que representa un hotel, se declara como clase abstracta para obligar a las subclases a crear sus propias versiones, 
-osea esta clase no se puede instanciar directamente, pero se utiliza como plantilla para definir otras clases que heredan sus propiedades y metodos.*/
 
-abstract class Hotel {//Clase creadora abstracta
+abstract class Hotel //Esta clase define la interfaz de los objetos que se crearan
+{
+    protected $precio;
 
-    protected $precio;//esta variable se declara como protegida y solo puede ser accedida desde la clase hotel y sus clases derivadas
-
-    public function construct($precio) {// Este método se utiliza para establecer el valor de $precio cuando se crea o se instancia un objeto de la clase Hotel.
+    public function construct($precio)
+    {
         $this->precio = $precio;
     }
 
-    abstract public function imprimirFormulario();//Método abstracto publico que puede ser accedido desde cualquier parte pero solo por las clases que se derivan de hotel
+    abstract public function imprimirFormulario();
 }
 
-//Clases creadores concretos
-class Hostal extends Hotel {
-
-    public function imprimirFormulario() {
+class Hostal extends Hotel // Hostal, Posada y resort son la clase de creadores concretos y a la vez son los productos concretos
+                           // Son las implementacion concretas de la interfaz 
+{
+    public function imprimirFormulario()
+    {
         echo '<div class="container-1">';
         echo '<h2 class="mt-5">HOSTAL</h2>';
         echo '<form action="index.php" method="post">';
@@ -213,9 +219,10 @@ class Hostal extends Hotel {
         echo '</div>';
     }
 }
-class Posada extends Hotel {
-
-    public function imprimirFormulario() {
+class Posada extends Hotel
+{
+    public function imprimirFormulario()
+    {
         echo '<div class="container-1">';
         echo '<h2 class="mt-5">POSADA</h2>';
         echo '<form action="index.php" method="post">';
@@ -231,9 +238,10 @@ class Posada extends Hotel {
     }
 }
 
-class Resort extends Hotel {
-
-    public function imprimirFormulario() {
+class Resort extends Hotel
+{
+    public function imprimirFormulario()
+    {
         echo '<div class="container-1">';
         echo '<h2 class="mt-5">RESORT</h2>';
         echo '<form action="index.php" method="post">';
@@ -249,14 +257,15 @@ class Resort extends Hotel {
     }
 }
 
-class HotelFactory {
-
-    public static function crearHotel($precio) {
+class HotelFactory //HoterFactory seria la clase creadora, que contiene el metodo crear hotel para crear objetos hotel
+{
+    public static function crearHotel($precio)
+    {
         if ($precio >= 40000 && $precio <= 69999) {
             return new Hostal($precio);
-        } else if ($precio >= 70000 && $precio <= 149999) {
+        } elseif ($precio >= 70000 && $precio <= 149999) {
             return new Posada($precio);
-        } else if ($precio >= 150000){
+        } elseif ($precio >= 150000) {
             return new Resort($precio);
         }
     }
